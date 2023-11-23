@@ -1,5 +1,6 @@
 # layout-optimizer
-Some Julia code for making an optimized keyboard layout based on distance traveled by each finger
+Some Julia code for making an optimized keyboard layout based on distance traveled by each finger.
+
 This code comes preconfigured to work with Colemak.
 
 Install the following packages for your Julia environment (don't @ me because it's Julia, it was the original creator's handiwork which I've refactored)
