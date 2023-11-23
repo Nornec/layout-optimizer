@@ -335,11 +335,9 @@ function objectiveFunction(myGenome, baseline)
 
     # calculate objective
     objective = sum(myFingerList[:, 6])
-		if (baseline == false)
-			objective = (objective / ColemakScore - 1) * 100
-		end
-
-    # return
+    if (baseline == false)
+	objective = (objective / ColemakScore - 1) * 100
+    end
     return objective
 end
 
@@ -362,12 +360,10 @@ function shuffleGenome(currentGenome, temperature)
     end
 
     return newGenome
-
 end
 
-
 function runSA()
-		println("This code will determine a better layout than the one given...hopefully.")
+    println("This code will determine a better layout than the one given...hopefully.")
     print("Calculating raw baseline: ")
     global ColemakScore = objectiveFunction(ColemakGenome,true)
     println(ColemakScore)
@@ -410,11 +406,8 @@ function runSA()
                 bestGenome = newGenome
                 bestObjective = newObjective
 
-                #staticCount = 0.0
-
                 println("(new best, png being saved)")
                 
-
                 drawKeyboard(bestGenome, iteration)
             end
         elseif exp(-delta/temperature) > rand()
